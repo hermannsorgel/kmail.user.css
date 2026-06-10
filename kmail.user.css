@@ -1,0 +1,131 @@
+/* ==UserStyle==
+@name           Clean Kmail Left Menu
+@namespace      https://github.com/hermannsorgel/kmail.user.css
+@version        0.1.0
+@description    A cleaner sidebar for Kmail.
+@author         sorgel
+==/UserStyle== */
+@-moz-document url-prefix("https://mail.infomaniak.com/") {
+    :root {
+        --nbs-test: red;
+        --nbs-background: #F5F5F5;
+        --nbs-background-light: #FFFFFF;
+        --nbs-hover: #E8E8E8;
+        --nbs-text: black;
+        --nbs-icons: #666;
+        --menu-width: 200px;
+    }
+
+    /* --- SIZING --- */
+    ik-left-menu.open,
+    .title-section:not(.title-section--collapse) {
+        width: var(--menu-width) !important;
+        min-width: var(--menu-width) !important;
+    }
+
+    ik-left-menu.open .toggle-menu {
+        left: 183px !important;
+    }
+
+    .mail-toolbar__right,
+    app-message-header-external,
+    app-open-tasks {
+        display: none !important;
+    }
+
+    /* --- BACKGROUNDS --- */
+    ik-left-menu,
+    app-tree-basic,
+    app-mailbox-selector,
+    .mailbox:hover,
+    app-title-section .title-section,
+    .ws-tree-node,
+    .mobile-drawer__left-bar,
+    ik-mobile-drawer,
+    :not(#fake-id) .mobile-drawer__content {
+        background-color: var(--nbs-background) !important;
+    }
+
+    app-title-section .title-section--collapse,
+    .mat-toolbar {
+        background-color: var(--nbs-background-light) !important;
+    }
+
+    /* --- HOVER & ACTIVE --- */
+    .ws-tree-item__row:hover,
+    .ws-tree-node-menu-active,
+    .ws-tree-item__row--active,
+    .ws-tree-item__row--dragged,
+    .ws-tree-node-dragging .ws-tree-node-content,
+    .ws-tree-node-content:hover,
+    ik-left-menu .active,
+    :not(#fake-id) ik-mobile-drawer .ws-tree-node-content.active {
+        background-color: var(--nbs-hover) !important;
+    }
+
+    .header-element:hover {
+        background-color: var(--nbs-background) !important;
+    }
+
+    ik-left-menu a {
+        color: var(--nbs-text) !important;
+        background-color: transparent;
+    }
+
+    /* --- TEXT & ICON COLORS --- */
+    .ws-tree-node,
+    app-mailbox-selector .mailbox,
+    :not(#fake-id) .ws-tree-item__title,
+    ik-mobile-drawer,
+    :not(#fake-id) .mobile-drawer__content,
+    ik-left-menu .icon::before,
+    ik-left-menu .icon-ik-chevron,
+    ik-left-menu .icon-chevron-down,
+    :not(#fake-id) .mobile-drawer__content .icon {
+        color: var(--nbs-text) !important;
+    }
+
+    html body app-header :not(#fake-id) .header-icons .header-element button .icon,
+    html body app-header :not(#fake-id) .header-icons .mobile-search-btn button .icon,
+    module-news-component,
+    .icon-navigation-menu,
+    .icon-navigation-menu-vertical {
+        /* Added vertical variant to be safe */
+        --module-news-icon-bell-color: var(--nbs-icons) !important;
+        color: var(--nbs-icons) !important;
+    }
+
+    /* --- BORDERS & MISC TWEAKS --- */
+    ik-left-menu {
+        border-right-color: var(--nbs-background) !important;
+    }
+    .ws-light-theme.ws-medium-theme ik-left-menu .mat-divider {
+        border-top-color: transparent;
+    }
+    a.expand span.text {
+        font-weight: 400 !important;
+    }
+    .arrow.icon::before {
+        font-size: 7px !important;
+    }
+
+    /* --- TEXT REPLACEMENT --- */
+    .ws-tree-node-text:has(.icon-send-email) .text,
+    a:has(.icon-revert) {
+        font-size: 0;
+    }
+    .ws-tree-node-text:has(.icon-send-email) .text::after {
+        content: "Sent";
+        font-size: 14px;
+    }
+    a:has(.icon-revert):after {
+        content: "Forwarding";
+        font-size: 14px;
+    }
+}
+
+@-moz-document url-prefix("https://ksuite.infomaniak.com/") {
+    nav {
+        display: none !important;
+    }
+}
