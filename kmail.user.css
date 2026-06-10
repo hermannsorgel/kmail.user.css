@@ -16,7 +16,7 @@
         --menu-width: 200px;
     }
 
-    /* --- SIZING --- */
+    /*  SIZING  */
     ik-left-menu.open,
     .title-section:not(.title-section--collapse) {
         width: var(--menu-width) !important;
@@ -33,7 +33,7 @@
         display: none !important;
     }
 
-    /* --- BACKGROUNDS --- */
+    /*  BACKGROUNDS  */
     ik-left-menu,
     app-tree-basic,
     app-mailbox-selector,
@@ -51,7 +51,7 @@
         background-color: var(--nbs-background-light) !important;
     }
 
-    /* --- HOVER & ACTIVE --- */
+    /*  HOVER & ACTIVE  */
     .ws-tree-item__row:hover,
     .ws-tree-node-menu-active,
     .ws-tree-item__row--active,
@@ -72,7 +72,7 @@
         background-color: transparent;
     }
 
-    /* --- TEXT & ICON COLORS --- */
+    /*  TEXT & ICON COLORS  */
     .ws-tree-node,
     app-mailbox-selector .mailbox,
     :not(#fake-id) .ws-tree-item__title,
@@ -95,7 +95,7 @@
         color: var(--nbs-icons) !important;
     }
 
-    /* --- BORDERS & MISC TWEAKS --- */
+    /*  BORDERS & MISC TWEAKS  */
     ik-left-menu {
         border-right-color: var(--nbs-background) !important;
     }
@@ -109,7 +109,7 @@
         font-size: 7px !important;
     }
 
-    /* --- TEXT REPLACEMENT --- */
+    /* TEXT REPLACEMENT */
     .ws-tree-node-text:has(.icon-send-email) .text,
     a:has(.icon-revert) {
         font-size: 0;
@@ -121,6 +121,22 @@
     a:has(.icon-revert):after {
         content: "Forwarding";
         font-size: 14px;
+    }
+
+   /* MARGINS */
+    ik-left-menu.open .ws-tree-node-content {
+        padding-left: 28px !important
+    }
+
+    .menu-title.desktop {
+        margin-top: 1em;
+        margin-left: 10px
+    }
+
+    :not(.ws-tree-item__child-wrapper) > app-ws-tree-item > .ws-tree-item > .ws-tree-item__row > .ws-tree-item__child-selector {
+        margin-left: 5px;
+        min-width: 0 !important;
+
     }
 }
 
