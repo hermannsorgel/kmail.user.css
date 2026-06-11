@@ -1,8 +1,8 @@
 /* ==UserStyle==
-@name           Clean Kmail Left Menu
+@name           Clean kMail Left Menu
 @namespace      github.com/hermannsorgel/kmail.user.css
-@version        0.1.0
-@description    A cleaner sidebar for Kmail.
+@version        0.1.1
+@description    A cleaner sidebar for kMail
 @author         sorgel
 ==/UserStyle== */
 @-moz-document url-prefix("https://mail.infomaniak.com/") {
@@ -31,6 +31,11 @@
     app-message-header-external,
     app-open-tasks {
         display: none !important;
+    }
+
+    button.new-mail {
+        margin-top: 0 !important;
+        margin-bottom: 5px !important;
     }
 
     /*  BACKGROUNDS  */
@@ -95,6 +100,10 @@
         color: var(--nbs-icons) !important;
     }
 
+    ik-left-menu .icon.icon-add-circle::before {
+        color: var(--nbs-icons) !important
+    }
+
     /*  BORDERS & MISC TWEAKS  */
     ik-left-menu {
         border-right-color: var(--nbs-background) !important;
@@ -123,7 +132,7 @@
         font-size: 14px;
     }
 
-   /* MARGINS */
+    /* MARGINS */
     ik-left-menu.open .ws-tree-node-content {
         padding-left: 28px !important
     }
@@ -136,7 +145,14 @@
     :not(.ws-tree-item__child-wrapper) > app-ws-tree-item > .ws-tree-item > .ws-tree-item__row > .ws-tree-item__child-selector {
         margin-left: 5px;
         min-width: 0 !important;
+    }
 
+    ik-left-menu.open .mat-tooltip-trigger.ws-tree-node-content {
+        padding-left: 17px !important;
+    }
+
+    .ws-tree-node-collapse .expand > span.icon {
+        margin-right: 5px !important;
     }
 }
 
